@@ -1,0 +1,22 @@
+
+.button-select-toggle {
+  align-items: center;
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  min-width: 65px;
+  &::before {
+    background: url(../img/add.svg) no-repeat center center;
+    height: 24px;
+    display: inline-block;
+    padding-right: 5px;
+    position: relative;
+    width: 20px;
+  }
+}
+
+.button-select-toggle-on {
+  &::before {
+    background: url(../img/close.svg) no-repeat center center;
+  }
+}

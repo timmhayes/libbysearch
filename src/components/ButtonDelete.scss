@@ -1,0 +1,19 @@
+
+.button-delete {
+  &::before {
+    background: url(../img/delete.svg) no-repeat center center ;
+  }
+}
+
+.button-delete-confirm {
+  &::before {
+    background-image: url(../img/delete_forever.svg);
+  }
+}
+
+.button-delete-cancel {
+  margin-right: 8px;
+  &::before {
+    background-image: url(../img/close.svg);
+  }
+}

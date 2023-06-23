@@ -1,0 +1,26 @@
+.list-image-box {
+  align-items: flex-start;
+  border: 1px var(--main-brand) solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  padding: 1rem;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.list-image-content {
+  flex: 1;
+}
+
+.list-image-image {
+  img {
+    display: block;
+    max-width: 150px;
+  }
+}

@@ -1,0 +1,26 @@
+.toast {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  bottom: 10px;
+  color: #000;
+  font-size: 0.875rem;
+  left: 50%;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  max-width: 600px;
+  min-width: 240px;
+  position: fixed;
+  opacity: 0;
+  text-align: center;
+  transform: translate(-50%, 150px);
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  width: 50%;
+  z-index: 9999;
+}
+
+.toast-active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

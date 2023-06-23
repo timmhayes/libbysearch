@@ -1,0 +1,45 @@
+
+.App-header {
+  align-items: center;
+  background-color: var(--main-brand);
+  color: var(--light-shades);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Spinnaker', sans-serif;
+  justify-content: center;
+  padding: 0;
+
+  h1 {
+    font-size: 1.1rem;
+    margin: 0.5rem;
+    text-transform: uppercase;
+    @media screen and (min-width: 576px) {
+      font-size: 1.2rem;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-left:  0.75rem;
+  padding-right: 0.75rem;
+
+  @media (min-width: 576px) {
+    max-width:540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .App {
+    width: fit-content;
+  }
+}

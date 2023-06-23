@@ -1,0 +1,26 @@
+.panel {
+
+  background-color: var(--light-shades);
+  border: 6px solid var(--dark-accent);
+  border-radius: 10px;
+  padding: 0;
+  margin: 1rem 0;
+
+  .panel-header {
+    background-color:  var(--dark-accent);
+    color: var(--dark-shades);
+    padding: 5px;
+  }
+
+  .panel-content {
+    padding: 1.25rem 1.5rem;
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
