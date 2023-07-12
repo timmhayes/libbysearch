@@ -72,7 +72,6 @@ const findBooks = async (searchTerm: string, libraries: LibraryMetadataType[], f
   return consolidateBookSearchResults(results, libraries);
 }
 
-const getLibraryInfo = async (websiteIds: number[]): Promise<LibraryMetadataType[]> => {
 const chunkLibraryArray = (arr: number[], size: number) : number[][] => {
   return arr.length > size
     ? [arr.slice(0, size), ...chunkLibraryArray(arr.slice(size), size)]
