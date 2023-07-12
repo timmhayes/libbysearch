@@ -73,6 +73,14 @@ const findBooks = async (searchTerm: string, libraries: LibraryMetadataType[], f
 }
 
 const getLibraryInfo = async (websiteIds: number[]): Promise<LibraryMetadataType[]> => {
+const chunkLibraryArray = (arr: number[], size: number) : number[][] => {
+  return arr.length > size
+    ? [arr.slice(0, size), ...chunkLibraryArray(arr.slice(size), size)]
+    : [arr];
+}
+
+const getLibraryInfoByBlock = async (websiteIds: number[]): Promise<LibraryMetadataType[]> => {
+  // overdrive caps the number of libraries you can request at once to 24
   const response = await fetch(`https://thunder.api.overdrive.com/v2/libraries/?websiteIds=${websiteIds.join()}`);
   const data = await response.json();
   const libraryData = data.items.map((data:any) => {
@@ -84,6 +92,13 @@ const getLibraryInfo = async (websiteIds: number[]): Promise<LibraryMetadataType
       logo: data.settings.logo140X60.href
     }
   })
+  return libraryData as LibraryMetadataType[];
+};
+
+const getLibraryInfo = async (websiteIds: number[]): Promise<LibraryMetadataType[]> => {
+  const websiteIdBlocks = chunkLibraryArray(websiteIds, 24);
+  const responses = Promise.all(websiteIdBlocks.map(chunk => getLibraryInfoByBlock(chunk)))
+  const libraryData = await responses.then((data) => data.reduce((result, chunk) => [...result, ...chunk], []));
   return libraryData as LibraryMetadataType[];
 };
 
